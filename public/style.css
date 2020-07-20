@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  background-image: url('/barack.jpg');
+  background-size: 100%;
+  height: 100%;
+  background-position: center;
+}
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+a {
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  text-align: flex-end;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 50px;
+  margin: 4px 2px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+a:hover {
+  background-color: #bdbdbd;
+  color: rgb(0, 0, 0);
+}
+
+h1,
+h2 {
+  color: white;
+}
