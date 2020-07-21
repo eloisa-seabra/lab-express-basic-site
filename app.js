@@ -1,25 +1,29 @@
 const express = require('express');
+const hbs = require('hbs');
 const app = express();
-
-// serve css and other static files from directory "public"
-//express.static() returns middleware that handles  every request
-//and for wtv request matches a static file,
-// it sends the static file
 
 app.use(express.static('public'));
 
-console.log(__dirname);
+app.set('view engine', 'hbs');
+app.set('views', __dirname + '/views');
+
+hbs.registerPartials(__dirname + '/views/partials');
+
 // Route handlers and the value jose/aline/santi are the end point
 // the order of The router handlers that you regist matter.
 app.get('/home', (request, response) => {
-  response.sendFile(__dirname + '/views/home.html');
+  response.render('person', { message: 'Welcome to Barack Obama webpage' });
 });
 
-app.get('/about', (request, response) => {
-  response.sendFile(__dirname + '/views/about.html');
-});
 app.get('/works', (request, response) => {
-  response.sendFile(__dirname + '/views/works.html');
+  response.render('person', { message: 'Barack Obama did a lot' });
+});
+app.get('/about', (request, response) => {
+  response.render('about', {
+    name: 'Barack Obama',
+    age: 58,
+    location: { city: 'Honolulu, HI', country: 'USA' }
+  });
 });
 
 app.get('*', (request, response) => {

@@ -1,4 +1,12 @@
-* {
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Barack Obama homepage</title>
+    <style>
+      * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -15,7 +23,7 @@ body {
 body {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 a {
@@ -24,7 +32,6 @@ a {
   padding: 5px 10px;
   text-align: flex-end;
   text-decoration: none;
-  display: inline-block;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-size: 50px;
   margin: 4px 2px;
@@ -38,6 +45,26 @@ a:hover {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
   color: white;
 }
+p{
+  color: white;
+  }
+  em {color: white;
+  }
+    </style>
+  </head>
+  <body>
+     {{>navbar}}
+      <div>
+   
+ </div>
+    {{{ body }}}
+  </body>
+</html>
